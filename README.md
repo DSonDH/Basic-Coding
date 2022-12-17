@@ -29,3 +29,5 @@ for loop 돌도록 하는 변수를 loop 내에서 바꾸면 다음 루프에서
 
 * int(str, base) : str을 base 진법 수로 바꿔줌. base 기본값 10.
 
+
+
