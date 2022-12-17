@@ -26,8 +26,9 @@ for loop 돌도록 하는 변수를 loop 내에서 바꾸면 다음 루프에서
 ![image](https://user-images.githubusercontent.com/15919242/206885055-05410248-b6ee-4fa2-813f-c244a668a120.png)
 
 * 제곱 관련 loop돌면서 판별할 때 역으로 sqrt로 판별해버리면 loop 안돌아도 되는 경우가 있음  
-
+  
 * int(str, base) : str을 base 진법 수로 바꿔줌. base 기본값 10.
-
-
+  
+* map, lambda
+```list(map(lambda x:x*x, range(1,6)))```  
 
