@@ -11,7 +11,9 @@ sort(item, key = lambda x: f(x))
 
 ### 타입별 내장함수
 * string type
-``` s.lower().count('p') ```
+``` s.lower().count('p') ```  
+!! string은 immutable 이므로 index별 재 allocation 불가능. 리스트로 바꾸면 가능.
+
 * list
 * set
 * dictionary
