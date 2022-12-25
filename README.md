@@ -15,6 +15,9 @@ sort(item, key = lambda x: f(x))
 !! string은 immutable 이므로 index별 재 allocation 불가능. 리스트로 바꾸면 가능.
 
 * list
+pop : 해당 index 자리 제거  
+remove : 해당 값 제일 왼쪽값 제거  
+
 * set
 * dictionary
 
