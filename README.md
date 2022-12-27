@@ -38,3 +38,9 @@ for loop 변수값을 바꾸던지/pop 등으로 길이 변경되게 하던지,
 * map, lambda
 ```list(map(lambda x:x*x, range(1,6)))```  
 
+* collection module  
+```
+from collections import Counter
+>>> Counter(["hi", "hey", "hi", "hi", "hello", "hey"])
+Counter({'hi': 3, 'hey': 2, 'hello': 1})
+```
