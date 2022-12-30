@@ -31,6 +31,8 @@ for loop 변수값을 바꾸던지/pop 등으로 길이 변경되게 하던지,
 * python combination module  
 ![image](https://user-images.githubusercontent.com/15919242/206885055-05410248-b6ee-4fa2-813f-c244a668a120.png)
 
+* for -else 문은, for loop를 break하지 않으면 else가 실행되는 것임. for iterable data가 없을때 else가 실행되는게 아님.
+
 * 제곱 관련 loop돌면서 판별할 때 역으로 sqrt로 판별해버리면 loop 안돌아도 되는 경우가 있음  
   
 * int(str, base) : str을 base 진법 수로 바꿔줌. base 기본값 10.
