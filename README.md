@@ -90,7 +90,8 @@ sort(item, key = lambda x: f(x))
 !! string은 immutable 이므로 index별 재 allocation 불가능. 리스트로 바꾸면 가능.
 
 ```'ooyyy'.count('y')
->>> 3```  
+>>> 3
+```  
 
 
 * list  
