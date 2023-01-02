@@ -1,10 +1,26 @@
 # Basic-Coding-Concepts
 Summary of Basic Coding Concepts
 
-Mainly refered to Pope Kim's POCU Academy curriculum.
-
 ## 1. Overall programming concepts
 
+### C  
+```#include```는 전처리기 지시문 중 하나.  
+전처리기(preprocessor) : 컴파일 하기 전 테스트를 복붙해주는 역할을 함.  
+```#include <stdio.h>```가 정확한 문법. "stdio.h"도 되나, 지양함.  
+C 표준 라이브러리란 ? 문자열 처리, 수학 계산, 입출력 처리, 메모리 관리에 필요한 매크로, data type, 함수 등을 모아 놓은 것.  
+
+```
+int main(void)
+{
+    return 0;  /* 프로그램에 아무 문제가 없음을  알려주는 관례. 규약.*/
+}
+```  
+함수 선언 : 
+함수 선언에서 void 생략 : 매개변수 받는데, 매개변수 갯수와 자료형을 모르는 상태  
+함수 정의에서 void 생략 : 매개변수가 없다는 뜻  
+함수 정의, 선언에서 void : 매개변수가 없다는 뜻을 명시하는 것.  
+
+<br>
 ## 2. Python notes
 
 sort(item, key = lambda x: f(x))
