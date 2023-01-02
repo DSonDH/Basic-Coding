@@ -9,7 +9,7 @@ Summary of Basic Coding Concepts
 ```#include <stdio.h>```가 정확한 문법. "stdio.h"도 되나, 지양함.  
 C 표준 라이브러리란 ? 문자열 처리, 수학 계산, 입출력 처리, 메모리 관리에 필요한 매크로, data type, 함수 등을 모아 놓은 것.  
 
-```
+```C
 int main(void)
 {
     return 0;  /* 프로그램에 아무 문제가 없음을  알려주는 관례. 규약.*/
@@ -32,7 +32,7 @@ float
 double
 long double
 
-```
+```C
 char default_char = 100;
 signed char signed_char = -100;
 unsigned char unsigned_char = 255;
@@ -119,10 +119,12 @@ for loop 변수값을 바꾸던지/pop 등으로 길이 변경되게 하던지,
 * int(str, base) : str을 base 진법 수로 바꿔줌. base 기본값 10.
   
 * map, lambda
-```list(map(lambda x:x*x, range(1,6)))```  
+```python3
+list(map(lambda x:x*x, range(1,6)))
+```  
 
 * collection module  
-```
+```python3
 from collections import Counter
 >>> Counter(["hi", "hey", "hi", "hi", "hello", "hey"])
 Counter({'hi': 3, 'hey': 2, 'hello': 1})
