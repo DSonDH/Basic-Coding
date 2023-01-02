@@ -98,6 +98,15 @@ sort(item, key = lambda x: f(x))
 * list  
 pop : 해당 index 자리 제거  
 remove : 해당 값 제일 왼쪽값 제거  
+```python3
+>>> a = [1, 1, 1, 2, 3]
+>>> a.count(1)
+3
+
+>>> ['ox', 'o', 'x', 'oxoxox'].count('ox')
+1
+```
+
 
 * set
 * dictionary
