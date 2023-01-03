@@ -59,11 +59,13 @@ char의 부호 여부 판단 방법
 범위 : 부호 없는 경우 0~255 (표준), 부호 있는 경우 : -128~127 (표준이면서 매우 올드한 기계에서는 -127~127)  
 
 short : 최소 16비트이고 char의 크기 이상인 정수형, int의 반절.
+(unsigned 명시 안하면 signed)  
 포팅 문제 없는 값의 범위.  
 unsigned short : 0~65535  
-signed short : -32767 ~ 32767   
+signed short : -32767 ~ 32767  
 
 int : (C89표준) 최소 16비트이고 short 크기 이상인 정수형
+(unsigned 명시 안하면 signed)  
 int : 그냥 정수라는 의미. CPU에게 앞뒤 생략하고 정수처리하라고 하면 CPU가 아는 크기여야 함.  그 크기는?  
 CPU의 ALU (Arithmetic Logic Unit)이 사용하는 기본 데이터 이 데이터를 word(워드)라 하고, 그 크기를 워드 크기라고 함  
 워드 크기는 register크기랑 일치함. 즉 CPU따라 다르고, 옛날 당시엔 16bit CPU가 흔했음! 그뒤에 32bit컴퓨터가 나오면서 int 크기는 32비트가 됨 ! 지금 64bit이지만 32비트로 머묾. 64비트로 바군다고 성능이 무조건 빨라지지도 않음 (cache memory 때문)  
@@ -72,13 +74,72 @@ int의 리터럴(literal)
 'u' 혹은 'U': 부호없는(unsigned)수를 표현하는 접미사.
 부호있는 수의 최댓값 보다 큰 값을 unsigned int에 대입할 경우 'u'혹은 'U'를 붙여야 함. 안붙이면 warning 발생  
 
-
 long : 최소 32비트이고 int 이상의 크기. 다른 언어에서는 보통 64bit  
 최소 64bit인 정수형은 C89에는 없다.  C89에서 int와 같음.
-literal : 'l' 혹은 'L', 'ul' 혹은 'UL' (unsigned 표시)
+literal : 'l' 혹은 'L', 'ul' 혹은 'UL' (unsigned 표시)  
+
+float : 보통 32bit인데 컴파일러 구현따라 다름, char 이상이면 됨  
+``` C
+float  num = 3.14f;
+unsigned float unsigned_float = 3.14f; /* 컴파일오류 */
+signed float signed_float = -3.14f;    /* 컴파일오류 */
+float signed_float = -3.14uf;          /* 컴파일오류 */
+```
+
+double : 표준에 따르면 cpu가 계산에 사용하는 기본데이터 크기.  
+크기는 float 이상이면 됨. 컴파일러 구현따라 다름, float처럼 unsigned형 없음.  
+
+long double : double보다 정밀도가 높음. double이상 크기면 됨. unsigned형 없음.  
+
+CF)  
+porting : 다른 플랫폼으로 맞게 만드는 과정  
+converting : 같은 플랫폼 상에서 개발 언어가 다른 경우  
+
+C에서 boolean형은 없다. 0은 false, 0아닌 값은 true.  
+관례상 return true 역할로 return 1을 많이 한다고 함.  
+
+``` C
+enum champ {
+    CHAMP_ZED,  /* 관례 : enum 이름인 champ를 enum으로 만들 값 prefix로 박아줌*/
+    CHAMP_JAX
+};  /* CHAMP_ZED는 0, CHAMP_JAX는 1 정수형을 가지게 됨.*/
+```
+
+변수 선언은 블럭의 시작에서만 해야함. 코드 중간에서 int var_name = ~~~ 하면 컴파일 오류뜸.  
+대신 블록 시작에서 선언만 int result;로 하고 코드 중간에서 result = add(n1, n2)하면 컴파일 됨.  
+
+sizeof() 는 함수가 아니고 연산자다.  
+피연산자의 크기를 바이트로 반환해주는 연산자!  
+컴파일 중에 평가된다. 호출되는 함수가 아님.  
+연산자가 반환하는 값은 부호없는 정수형 상수로 size_t형이다. (새로운 dtype 비슷함)  
+음수 필요없는 index로 자주 쓰는 타입이라고 함.  
+"_t" 는 typedef를 했다는 힌트. C89표준은 size_t 크기를 명시하지 않음. C99 표준에서 최소 16비트 요구함.  
+```C
+char ch = 'a';
+size_t size_char = sizeof(ch);
+```
+
+* 배열의 경우, 함수 인자로 받을 경우 sizeof()결과는 4바이트임. 
+```C
+int num = 10;            
+int* p = &num;            /* 역참조 연산자(X) 포인터 변수 선언 */
+int num1 = *p;            /* 역참조 연산자(O) */
+int result = num1 * num2; /* 역참조 연산자(X) 곱셈 연산자(O) */
+
+주소연산자 &
+int num = 10;
+int* p = &num;
+int still_num = num & num;  /* 주소 연산자(X) 비트 연산자(O) */
+/* 피연산자가 하나일 때는 주소연산자. 피연산자가 2개일때 사용하는 비트 연산자가 아님
+어떤 변수의 메모리 주소를 반환. */
+```
 
 
 <br>
+<br>
+<br>
+<br>
+--------
 
 ## 2. Python notes
 
