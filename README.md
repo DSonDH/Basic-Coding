@@ -134,6 +134,56 @@ int still_num = num & num;  /* 주소 연산자(X) 비트 연산자(O) */
 어떤 변수의 메모리 주소를 반환. */
 ```
 
+* 조건문 은 if문 혹은 switch문을 말함. for문한에 있는 것은 조건식임 !!  
+```C
+float num = 3.14f;
+
+if (num) {
+    printf("%f\n", num);
+}
+
+/* case에 사용가능한 데이터형 : int, char, enum만 가능
+break 안넣으면 그 아래코드 계속 실행함. 조건 확인도 안하고! 이를 fallthrough라 함 
+근데 이를 일부러 유도한 걸수도 있으니까 주석으로 intentioanl fallthrough를 명시해야함 
+case lable은 반드시 상수만 넣도록, 이 상수는 컴파일 시 결정되야하도록 언어 스펙이 정해짐 
+즉 변수라서 계속 바뀔 가능성 있으면 안되는 것임.. */
+switch (num) {
+case 0:
+    printf("Hello POCU!\n");
+    break;
+case 1:
+    printf("Hello World!\n");
+    break;
+default:
+    printf("The Others!\n");
+    break;
+}
+```
+
+C for loop, while, do while
+```
+int sum = 0;
+size_t i;
+for (i=0; i < 10; ++i) {
+    sum += i;
+}
+
+int day = 5;
+while (day-- > 0) {
+    printf("%d\n", day);
+    
+    if (num < 1) {
+        break;  /* continue; 도 사용가능 python과 동일 기능 */
+    }
+}
+
+int day = 5;
+do {
+    printf("%d\n", day);
+} while (day -- != 0);
+
+코딩표준 : boolean 0이면 조건식 자동 판별이 되지만, == 0 !=0 을 명시해주자.
+```
 
 <br>
 <br>
