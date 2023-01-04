@@ -1,7 +1,6 @@
 <br>
 <br>
--------------
--------------
+
 # Python
 
 sort(item, key = lambda x: f(x))
