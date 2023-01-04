@@ -6,7 +6,7 @@
 sort(item, key = lambda x: f(x))
 
 
-# 알고리듬  
+## 알고리듬  
 n 크기 이하 모든 소수 찾기 : 에라토스테네스 체  
 n 의 약수 찾기 : ???  
 
@@ -45,7 +45,7 @@ for loop 돌도록 하는 변수를 loop 내에서 바꾸면 다음 루프에서
 ![image](https://user-images.githubusercontent.com/15919242/206884883-dd7947f0-8383-40b5-81a9-4b594d46533b.png)  
 for loop 변수값을 바꾸던지/pop 등으로 길이 변경되게 하던지, 
 
-## 기타 팁 (?)
+## 기타  
 * python combination module  
 ![image](https://user-images.githubusercontent.com/15919242/206885055-05410248-b6ee-4fa2-813f-c244a668a120.png)
 
