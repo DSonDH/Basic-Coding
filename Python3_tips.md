@@ -1,6 +1,3 @@
-<br>
-<br>
-
 # Python
 
 sort(item, key = lambda x: f(x))
@@ -38,7 +35,8 @@ remove : 해당 값 제일 왼쪽값 제거
 
 * set
 * dictionary
-
+<br>
+<br>
 ## 주의사항
 * python for loop iterable data type change cause unexpected behavior  
 for loop 돌도록 하는 변수를 loop 내에서 바꾸면 다음 루프에서 바뀐 아이로 실행되서 코딩이 어려워질 수 있음
