@@ -33,7 +33,13 @@ remove : 해당 값 제일 왼쪽값 제거
 ```
 
 
-* set
+* set  
+create empty set  
+```python3 
+set()
+{}  # empty dictionary not set
+``` 
+
 * dictionary
 <br>
 <br>
