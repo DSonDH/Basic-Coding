@@ -21,6 +21,11 @@ n 의 약수 찾기 : ???
 
 
 * list  
+```python3
+>>> [1, 1] + [1, 2, 3]
+[1, 1, 1, 2, 3]
+```
+
 pop : 해당 index 자리 제거  
 remove : 해당 값 제일 왼쪽값 제거  
 ```python3
@@ -72,6 +77,18 @@ for loop 변수값을 바꾸던지/pop 등으로 길이 변경되게 하던지,
 * map, lambda
 ```python3
 list(map(lambda x:x*x, range(1,6)))
+
+>>> from functools import reduce   # 파이썬 3에서는 써주셔야 해요  
+>>> reduce(lambda x, y: x + y, [0, 1, 2, 3, 4])
+10
+>>> reduce(lambda x, y: y + x, 'abcde')
+'edcba'
+
+>>> list(map(lambda x: x ** 2, range(5)))     # 파이썬 2 및 파이썬 3
+[0, 1, 4, 9, 16]
+
+>>> list(filter(lambda x: x < 5, range(10))) # 파이썬 2 및 파이썬 3
+[0, 1, 2, 3, 4]
 ```  
 
 * collection module  
